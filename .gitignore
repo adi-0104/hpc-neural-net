@@ -18,6 +18,7 @@ prototype/
 __pycache__/
 *.pyc
 .venv/
+uv.lock
 
 # Editor
 *.swp

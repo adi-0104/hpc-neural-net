@@ -1,0 +1,15 @@
+[project]
+name = "project-3-winter-2026-adi-0104"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.2",
+]
+
+[dependency-groups]
+dev = [
+    "ipython>=9.10.0",
+]
