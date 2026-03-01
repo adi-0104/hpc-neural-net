@@ -48,3 +48,7 @@ void backward_pass(Network *net, int label);
 // helpers
 void zero_gradients(Network *net);
 void update_weights(Network *net, float lr, int batch_size);
+
+// batch helpers
+void shuffle_indices(int *arr, int n);
+

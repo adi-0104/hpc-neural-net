@@ -22,6 +22,16 @@ static inline float rand_uniform()
     return (float)xorshift32() / (float)UINT32_MAX;
 }
 
+
+void shuffle_indices(int *arr, int n){
+    for(int i = n-1; i > 0; i--){
+        int j = xorshift32() % (i + 1);
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+}
+
 // ---- MATRIX MULTIPLIERS -------
 
 // z = W * x + b

@@ -37,6 +37,7 @@ MNISTData load_mnist(const char *img_path, const char *label_path)
         fread(pix_buff, 1, pixels_per_image, f_img);
         for (int p = 0; p < pixels_per_image; p++)
         {
+            // normalise
             data.images[i * pixels_per_image + p] = (float)pix_buff[p] / 255.0f;
         }
     }
