@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 #include <math.h>
 #include "network.h"
 
@@ -151,6 +152,44 @@ void forward_pass(Network *net, float *input){
         // update input 
         x = current_layer->a;
     }
+}
+
+void backward_pass(Network *net, int label){
+
+    for(int i = net->n_layers - 1; i >=0; i--){
+        Layer *l = &net->layers[i];
+        // calculate delta based on layer position
+        if (i == net->n_layers - 1) {
+            for(int j = 0; j < l->n_out; j++){
+                    l->delta[j] = l->a[j] - (j == label ? 1.0f : 0.0f);
+                }
+        } else {
+            // relu derivative
+            // d2 = np.dot(W3.T, d3) * (z2>0)
+            Layer *l_plus_1 = &net->layers[i + 1];
+            memset(l->delta, 0, l->n_out * sizeof(float));
+            mat_transpose_vec_mul(l_plus_1->weights,l_plus_1->delta, l->delta, l_plus_1->n_out, l_plus_1->n_in);
+            for(int j = 0; j < l->n_out; j++){
+                    
+                    l->delta[j] *= (l->z[j] > 0 ? 1.0f : 0.0f);
+                }
+        }
+
+        // calculate dw
+        if (i != 0) {
+            Layer *l_prev = &net->layers[i-1];
+            // dw3 = np.outer(d3, a2)
+            outer_product_accumulate(l->delta, l_prev->a, l->dw, l->n_out, l->n_in);
+        } else {
+            outer_product_accumulate(l->delta, net->input, l->dw, l->n_out, l->n_in);
+        }
+        // calculate db
+        for(int j = 0; j<l->n_out; j++){
+            l->db[j] += l->delta[j];
+        }
+
+    }
+
 }
 
 void free_network(Network *n){

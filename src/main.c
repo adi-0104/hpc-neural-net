@@ -7,7 +7,7 @@ int main() {
     MNISTData test  = load_mnist("data/t10k-images-idx3-ubyte", "data/t10k-labels-idx1-ubyte");
     printf("Train: %d images, Test: %d images\n", train.n_images, test.n_images);
     
-    int layer_sizes[] = {784,256,128,10};
+    int layer_sizes[] = {784,128,256,10};
     Network neural_net = init_network(layer_sizes, 3);
     
     // forward pass
