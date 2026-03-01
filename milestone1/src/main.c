@@ -7,15 +7,15 @@
 
 int main()
 {
-    MNISTData train = load_mnist("data/train-images-idx3-ubyte", "data/train-labels-idx1-ubyte");
-    MNISTData test = load_mnist("data/t10k-images-idx3-ubyte", "data/t10k-labels-idx1-ubyte");
+    MNISTData train = load_mnist("../data/train-images-idx3-ubyte", "../data/train-labels-idx1-ubyte");
+    MNISTData test = load_mnist("../data/t10k-images-idx3-ubyte", "../data/t10k-labels-idx1-ubyte");
     printf("Train: %d images, Test: %d images\n", train.n_images, test.n_images);
 
     int layer_sizes[] = {784, 128, 256, 10};
     Network neural_net = init_network(layer_sizes, 3);
 
     // params
-    float learning_rate = 0.01;
+    float learning_rate = 0.05;
     int batch_size = 64;
     int epochs = 20;
     int pixels = 784;
@@ -68,6 +68,8 @@ int main()
     // test accuracy 
     int test_correct = 0;
     float test_cost = 0.0f;
+
+    clock_gettime(CLOCK_MONOTONIC, &t0);
     for (int i = 0; i < test.n_images; i++)
     {
         forward_pass(&neural_net, &test.images[i * pixels]);
@@ -80,8 +82,10 @@ int main()
         if (pred == (int)test.labels[i])
             test_correct++;
     }
+    clock_gettime(CLOCK_MONOTONIC, &t1);
+    printf("Inference time: %.4fs\n", (t1.tv_sec-t0.tv_sec) + (t1.tv_nsec-t0.tv_nsec)/1e9);
     printf("Test accuracy: %.2f%%\n", 100.0f * test_correct / test.n_images);
-    printf("Test Cost: %.4f%%\n",  test_cost / test.n_images);
+    printf("Test Cost: %.4f\n",  test_cost / test.n_images);
     free(indices);
 
     free_network(&neural_net);

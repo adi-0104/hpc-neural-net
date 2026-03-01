@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O2 -Wall -lm
+CFLAGS = -O3 -Wall -lm
 SRC = src/main.c src/network.c src/mnist.c
 TARGET = nn
 
