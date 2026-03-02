@@ -1,0 +1,2 @@
+batch_size,learning_rate,epochs,test_accuracy,total_training_time_seconds,total_testing_time_seconds,grind_rate
+100,0.05,20,0.9769,254.82,1.74,4709
