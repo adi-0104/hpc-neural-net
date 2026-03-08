@@ -1,0 +1,4 @@
+version,tile_size,core_count,batch256_training_time_seconds,batch512_training_time_seconds,batch256_grind_rate,batch512_grind_rate,batch256_test_accuracy_percent,batch512_test_accuracy_percent
+CPU_no_BLAS,,,,,,,,
+CPU_BLAS,NA,,,,,,,
+GPU,NA,NA,,,,,,
