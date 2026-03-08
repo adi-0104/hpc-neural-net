@@ -1,7 +1,8 @@
 #pragma once
 #include <stdint.h>
 
-typedef struct {
+typedef struct
+{
     int n_in, n_out;
     int max_batch;
     float *weights;
@@ -14,13 +15,14 @@ typedef struct {
 } Layer;
 
 // Network
-typedef struct {
+typedef struct
+{
     int n_layers;
     Layer *layers;
     int max_batch;
 } Network;
 
-//Layer lifecycle 
+// Layer lifecycle
 Layer init_layer(int n_in, int n_out, int max_batch);
 void free_layer(Layer *l);
 
@@ -42,7 +44,7 @@ void softmax_batch(float *Z, float *A, int n_classes, int bs);
 void batched_forward_pass(Network *net, float *X_batch, int bs);
 void batched_backward_pass(Network *net, float *X_batch, float *Y_onehot, int bs);
 
-//SGD helpers
+// SGD helpers
 void zero_gradients(Network *net);
 void update_weights(Network *net, float lr, int bs);
 void shuffle_indices(int *arr, int n);
