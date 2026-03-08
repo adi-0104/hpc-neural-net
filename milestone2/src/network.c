@@ -47,7 +47,7 @@ Layer init_layer(int n_in, int n_out, int max_batch)
     l.dW = calloc(n_out * n_in, sizeof(float));
     l.db = calloc(n_out, sizeof(float));
 
-    // Kaiming uniform: same as M1
+    // Kaiming uniform:
     float limit = 1.0f / sqrtf((float)n_in);
     float range = 2.0f * limit;
     for (int i = 0; i < n_out * n_in; i++)
