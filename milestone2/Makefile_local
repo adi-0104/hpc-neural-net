@@ -1,0 +1,25 @@
+CC     = clang
+CFLAGS = -std=c99 -O3  -Wall -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include
+LDFLAGS = -L/opt/homebrew/opt/libomp/lib -lomp -lm
+
+# Toggle: make BLAS=1
+ifdef BLAS
+    CFLAGS  += -DUSE_BLAS -I/opt/homebrew/opt/openblas/include
+    LDFLAGS += -L/opt/homebrew/opt/openblas/lib -lopenblas
+endif
+
+# Toggle: make TILE=32 / TILE=64 / TILE=128  (default 64 in gemm.h)
+ifdef TILE
+    CFLAGS += -DTILE=$(TILE)
+endif
+
+SRC    = src/main.c src/network.c src/gemm.c src/mnist.c
+TARGET = nn
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC) $(LDFLAGS)
+
+clean:
+	rm -f $(TARGET)

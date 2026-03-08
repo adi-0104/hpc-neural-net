@@ -17,7 +17,7 @@ int main()
     // params
     float learning_rate = 0.05;
     int batch_size = 64;
-    int epochs = 20;
+    int epochs = 5;
     int pixels = 784;
 
     int *indices = malloc(train.n_images * sizeof(int));
