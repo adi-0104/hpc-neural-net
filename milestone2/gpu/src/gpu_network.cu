@@ -198,7 +198,7 @@ GPUNetwork gpu_init_network(int *layer_sizes, int n_layers, int max_batch,
     GPUNetwork net;
     net.n_layers = n_layers;
     net.max_batch = max_batch;
-    net.layers = malloc(n_layers * sizeof(GPULayer));
+    net.layers = (GPULayer *)malloc(n_layers * sizeof(GPULayer));
 
     for (int i = 0; i < n_layers; i++)
     {

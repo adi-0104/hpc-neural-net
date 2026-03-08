@@ -1,5 +1,5 @@
 CC     = gcc
-CFLAGS =  -O3 -Wall -fopenmp
+CFLAGS =  -O3 -Wall -fopenmp -march=native
 LDFLAGS = -lm
 
 ifdef BLAS

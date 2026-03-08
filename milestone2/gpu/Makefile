@@ -1,16 +1,16 @@
 NVCC      = nvcc
-# sm_80 = A100 (Midway3 GPU partition). Change to sm_70 for V100 if needed.
-NVCCFLAGS = -O3 -arch=sm_80
+# sm_80 = A100, Change to sm_70 for V100 if needed.
+NVCCFLAGS = -O3  -arch=sm_70
 
 # Mixed C/CUDA build: compile mnist.c with gcc, link everything with nvcc
 CC        = gcc
-CFLAGS    = -O3
+CFLAGS    = -O3 -march=native
 
 SRC_CU  = src/main.cu src/gpu_network.cu src/gpu_gemm.cu
 SRC_C   = src/mnist.c
 OBJ_C   = mnist.o
 
-TARGET  = nn_gpu
+TARGET  = nn_gpu_v100_512
 
 all: $(TARGET)
 
