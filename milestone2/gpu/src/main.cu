@@ -133,6 +133,7 @@ int main()
                100.0f * correct / train.n_images);
     }
 
+    cudaDeviceSynchronize();
     clock_gettime(CLOCK_MONOTONIC, &t1);
     double train_time = (t1.tv_sec - t0.tv_sec) + (t1.tv_nsec - t0.tv_nsec) / 1e9;
     double grind_rate = (double)train.n_images * epochs / train_time;
@@ -167,6 +168,7 @@ int main()
         }
         free(test_idx);
     }
+    cudaDeviceSynchronize();
     clock_gettime(CLOCK_MONOTONIC, &t1);
     double infer_time = (t1.tv_sec - t0.tv_sec) + (t1.tv_nsec - t0.tv_nsec) / 1e9;
 
