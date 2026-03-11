@@ -5,6 +5,13 @@ NVCCFLAGS = -O3  -arch=sm_70
 CC        = gcc
 CFLAGS    = -O3 -march=native
 
+ifdef CUBLAS
+    NVCCFLAGS += -DUSE_CUBLAS
+    LDFLAGS    = -lcublas
+else
+    LDFLAGS    =
+endif
+
 SRC_CU  = src/main.cu src/gpu_network.cu src/gpu_gemm.cu
 SRC_C   = src/mnist.c
 OBJ_C   = mnist.o
@@ -13,13 +20,13 @@ TARGET  = nn_gpu_v100_512
 
 all: $(TARGET)
 
-# Compile the pure-C file separately
+# Compile the C files
 $(OBJ_C): $(SRC_C)
 	$(CC) $(CFLAGS) -c $(SRC_C) -o $(OBJ_C)
 
-# Compile + link CUDA files, then link in the C object
+# Compile + link CUDA files
 $(TARGET): $(SRC_CU) $(OBJ_C)
-	$(NVCC) $(NVCCFLAGS) $(SRC_CU) $(OBJ_C) -lm -o $(TARGET)
+	$(NVCC) $(NVCCFLAGS) $(SRC_CU) $(OBJ_C) -lm $(LDFLAGS) -o $(TARGET)
 
 clean:
 	rm -f $(TARGET) $(OBJ_C)

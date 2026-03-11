@@ -83,7 +83,7 @@ int main()
 
     for (int epoch = 0; epoch < epochs; epoch++)
     {
-        shuffle_indices(indices, train.n_images);
+        shuffle_indices(indices, 50000);
         float total_cost = 0.0f;
         int   correct    = 0;
 

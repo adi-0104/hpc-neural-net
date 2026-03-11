@@ -45,7 +45,7 @@ int main()
 
     for (int epoch = 0; epoch < epochs; epoch++)
     {
-        shuffle_indices(indices, train.n_images);
+        shuffle_indices(indices, 50000);
         float total_cost = 0.0f;
         int correct = 0;
 
@@ -117,7 +117,7 @@ int main()
 
     clock_gettime(CLOCK_MONOTONIC, &t1);
     double train_time = (t1.tv_sec - t0.tv_sec) + (t1.tv_nsec - t0.tv_nsec) / 1e9;
-    double grind_rate = (double)(train.n_images) * epochs / train_time;
+    double grind_rate = (double)(50000) * epochs / train_time;
     printf("\nTraining time: %.2f s  Grind rate: %.0f smp/s\n", train_time, grind_rate);
 
     // testing loop

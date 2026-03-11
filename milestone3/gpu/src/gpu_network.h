@@ -1,5 +1,6 @@
 #pragma once
 #include <stdint.h>
+#include <cublas_v2.h>
 
 typedef struct
 {
@@ -25,6 +26,7 @@ typedef struct
     int n_layers;
     GPULayer *layers;
     int max_batch;
+    cublasHandle_t cublas_handle;
 } GPUNetwork;
 
 GPULayer gpu_init_layer(int n_in, int n_out, int max_batch,

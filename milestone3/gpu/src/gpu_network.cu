@@ -199,6 +199,7 @@ GPUNetwork gpu_init_network(int *layer_sizes, int n_layers, int max_batch,
     net.n_layers = n_layers;
     net.max_batch = max_batch;
     net.layers = (GPULayer *)malloc(n_layers * sizeof(GPULayer));
+    cublasCreate(&net.cublas_handle);
 
     for (int i = 0; i < n_layers; i++)
     {
@@ -214,6 +215,7 @@ void gpu_free_network(GPUNetwork *net)
 {
     for (int i = 0; i < net->n_layers; i++)
         gpu_free_layer(&net->layers[i]);
+    cublasDestroy(net->cublas_handle);
     free(net->layers);
 }
 
@@ -242,10 +244,24 @@ void gpu_batched_forward_pass(GPUNetwork *net, const float *d_X_batch, int bs)
         dim3 bb_grid(ceil_div(bs, BLOCK_SIZE), ceil_div(l->n_out, BLOCK_SIZE));
         bias_broadcast_kernel<<<bb_grid, bb_block>>>(l->d_Z, l->d_biases, l->n_out, bs);
 
+#ifdef USE_CUBLAS
+        {
+            const float one = 1.0f;
+            cublasSgemm(net->cublas_handle,
+                        CUBLAS_OP_N, CUBLAS_OP_N,
+                        bs, l->n_out, l->n_in,
+                        &one,
+                        d_A_prev,    bs,
+                        l->d_weights, l->n_in,
+                        &one,
+                        l->d_Z,      bs);
+        }
+#else
         gpu_gemm_nn(l->n_out, bs, l->n_in,
                     1.0f, l->d_weights, l->n_in,
                     d_A_prev, bs,
                     1.0f, l->d_Z, bs);
+#endif
 
         int total = l->n_out * bs;
         if (layer_idx == net->n_layers - 1)
@@ -285,10 +301,24 @@ void gpu_batched_backward_pass(GPUNetwork *net,
         else
         {
             GPULayer *l_next = &net->layers[i + 1];
+#ifdef USE_CUBLAS
+            {
+                const float one = 1.0f, zero = 0.0f;
+                cublasSgemm(net->cublas_handle,
+                            CUBLAS_OP_N, CUBLAS_OP_T,
+                            bs, l->n_out, l_next->n_out,
+                            &one,
+                            l_next->d_Delta,   bs,
+                            l_next->d_weights, l->n_out,
+                            &zero,
+                            l->d_Delta,        bs);
+            }
+#else
             gpu_gemm_tn(l->n_out, bs, l_next->n_out,
                         1.0f, l_next->d_weights, l->n_out,
                         l_next->d_Delta, bs,
                         0.0f, l->d_Delta, bs);
+#endif
             int block1d = 256;
             int grid1d = ceil_div(total, block1d);
             relu_deriv_kernel<<<grid1d, block1d>>>(l->d_Delta, l->d_Z, total);
@@ -296,10 +326,24 @@ void gpu_batched_backward_pass(GPUNetwork *net,
 
         // Gradient: dW += Delta * A_prev^T
         const float *d_A_prev = (i == 0) ? d_X_batch : net->layers[i - 1].d_A;
+#ifdef USE_CUBLAS
+        {
+            const float one = 1.0f;
+            cublasSgemm(net->cublas_handle,
+                        CUBLAS_OP_T, CUBLAS_OP_N,
+                        l->n_in, l->n_out, bs,
+                        &one,
+                        d_A_prev,   bs,
+                        l->d_Delta, bs,
+                        &one,
+                        l->d_dW,    l->n_in);
+        }
+#else
         gpu_gemm_nt(l->n_out, l->n_in, bs,
                     1.0f, l->d_Delta, bs,
                     d_A_prev, bs,
                     1.0f, l->d_dW, l->n_in);
+#endif
 
         // Gradient: db += rowsum(Delta)
         int block_j = 256;
