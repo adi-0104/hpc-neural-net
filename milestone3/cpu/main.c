@@ -12,10 +12,10 @@ int main()
     fprintf(loss_file, "epoch,val_loss\n");
 
     // load data
-    MNISTData train = load_mnist("../data/train-images-idx3-ubyte",
-                                 "../data/train-labels-idx1-ubyte");
-    MNISTData test = load_mnist("../data/t10k-images-idx3-ubyte",
-                                "../data/t10k-labels-idx1-ubyte");
+    MNISTData train = load_mnist("../../data/train-images-idx3-ubyte",
+                                 "../../data/train-labels-idx1-ubyte");
+    MNISTData test = load_mnist("../../data/t10k-images-idx3-ubyte",
+                                "../../data/t10k-labels-idx1-ubyte");
     printf("Train: %d images  Test: %d images\n", train.n_images, test.n_images);
 
     // params
