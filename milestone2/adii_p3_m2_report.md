@@ -2,7 +2,7 @@
 
 ## Neural Network — MNIST Digit Classification
 
-## net: adii
+## cnet: adii
 
 ## Performance Benchmarks
 
