@@ -7,16 +7,15 @@ CFLAGS    = -O3 -march=native
 
 ifdef CUBLAS
     NVCCFLAGS += -DUSE_CUBLAS
-    LDFLAGS    = -lcublas
-else
-    LDFLAGS    =
 endif
+
+LDFLAGS = -lcublas
 
 SRC_CU  = src/main.cu src/gpu_network.cu src/gpu_gemm.cu
 SRC_C   = src/mnist.c
 OBJ_C   = mnist.o
 
-TARGET  = nn_gpu_v100_512
+TARGET  = nn_gpu_v100_500
 
 all: $(TARGET)
 
