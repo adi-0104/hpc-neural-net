@@ -1,0 +1,243 @@
+batch size 500, epochs 50, lr 0.1
+
+=== CPU Native (TILE=32) ===
+
+--- TILE=32  Threads=16 ---
+Train: 60000 images  Test: 10000 images
+Learning rate: 0.1000  Batch size: 500  Epochs: 50
+OpenMP threads: 16
+Epoch  1/50  train_cost: 1.6225  train_acc: 61.58%  val_loss: 0.6441  val_acc: 84.90%
+Epoch  2/50  train_cost: 0.5084  train_acc: 86.21%  val_loss: 0.3718  val_acc: 89.84%
+Epoch  3/50  train_cost: 0.3787  train_acc: 89.26%  val_loss: 0.3198  val_acc: 91.06%
+Epoch  4/50  train_cost: 0.3331  train_acc: 90.33%  val_loss: 0.2864  val_acc: 91.89%
+Epoch  5/50  train_cost: 0.3057  train_acc: 91.25%  val_loss: 0.2732  val_acc: 92.22%
+Epoch  6/50  train_cost: 0.2831  train_acc: 91.84%  val_loss: 0.2539  val_acc: 92.69%
+Epoch  7/50  train_cost: 0.2643  train_acc: 92.37%  val_loss: 0.2352  val_acc: 93.14%
+Epoch  8/50  train_cost: 0.2479  train_acc: 92.82%  val_loss: 0.2279  val_acc: 93.46%
+Epoch  9/50  train_cost: 0.2323  train_acc: 93.25%  val_loss: 0.2111  val_acc: 93.94%
+Epoch 10/50  train_cost: 0.2194  train_acc: 93.64%  val_loss: 0.2002  val_acc: 94.37%
+Epoch 11/50  train_cost: 0.2064  train_acc: 94.06%  val_loss: 0.1911  val_acc: 94.78%
+Epoch 12/50  train_cost: 0.1951  train_acc: 94.34%  val_loss: 0.1849  val_acc: 94.89%
+Epoch 13/50  train_cost: 0.1845  train_acc: 94.67%  val_loss: 0.1763  val_acc: 95.17%
+Epoch 14/50  train_cost: 0.1755  train_acc: 94.90%  val_loss: 0.1682  val_acc: 95.54%
+Epoch 15/50  train_cost: 0.1665  train_acc: 95.18%  val_loss: 0.1573  val_acc: 95.80%
+Epoch 16/50  train_cost: 0.1587  train_acc: 95.41%  val_loss: 0.1520  val_acc: 95.86%
+Epoch 17/50  train_cost: 0.1503  train_acc: 95.61%  val_loss: 0.1461  val_acc: 96.12%
+Epoch 18/50  train_cost: 0.1431  train_acc: 95.83%  val_loss: 0.1457  val_acc: 95.96%
+Epoch 19/50  train_cost: 0.1364  train_acc: 96.07%  val_loss: 0.1375  val_acc: 96.14%
+Epoch 20/50  train_cost: 0.1299  train_acc: 96.25%  val_loss: 0.1335  val_acc: 96.34%
+Epoch 21/50  train_cost: 0.1244  train_acc: 96.46%  val_loss: 0.1288  val_acc: 96.40%
+Epoch 22/50  train_cost: 0.1197  train_acc: 96.56%  val_loss: 0.1244  val_acc: 96.55%
+Epoch 23/50  train_cost: 0.1142  train_acc: 96.76%  val_loss: 0.1279  val_acc: 96.53%
+Epoch 24/50  train_cost: 0.1090  train_acc: 96.93%  val_loss: 0.1213  val_acc: 96.73%
+Epoch 25/50  train_cost: 0.1043  train_acc: 97.03%  val_loss: 0.1149  val_acc: 96.97%
+Epoch 26/50  train_cost: 0.0998  train_acc: 97.17%  val_loss: 0.1122  val_acc: 96.91%
+Epoch 27/50  train_cost: 0.0962  train_acc: 97.34%  val_loss: 0.1094  val_acc: 96.95%
+Epoch 28/50  train_cost: 0.0926  train_acc: 97.40%  val_loss: 0.1079  val_acc: 97.02%
+Epoch 29/50  train_cost: 0.0892  train_acc: 97.53%  val_loss: 0.1070  val_acc: 97.05%
+Epoch 30/50  train_cost: 0.0860  train_acc: 97.63%  val_loss: 0.1026  val_acc: 97.21%
+Epoch 31/50  train_cost: 0.0824  train_acc: 97.75%  val_loss: 0.1038  val_acc: 97.17%
+Epoch 32/50  train_cost: 0.0797  train_acc: 97.84%  val_loss: 0.0991  val_acc: 97.32%
+Epoch 33/50  train_cost: 0.0768  train_acc: 97.93%  val_loss: 0.1005  val_acc: 97.30%
+Epoch 34/50  train_cost: 0.0741  train_acc: 97.94%  val_loss: 0.0953  val_acc: 97.40%
+Epoch 35/50  train_cost: 0.0715  train_acc: 98.01%  val_loss: 0.0944  val_acc: 97.47%
+Epoch 36/50  train_cost: 0.0686  train_acc: 98.10%  val_loss: 0.0928  val_acc: 97.47%
+Epoch 37/50  train_cost: 0.0666  train_acc: 98.20%  val_loss: 0.0917  val_acc: 97.47%
+Epoch 38/50  train_cost: 0.0645  train_acc: 98.23%  val_loss: 0.0935  val_acc: 97.44%
+Epoch 39/50  train_cost: 0.0620  train_acc: 98.30%  val_loss: 0.0892  val_acc: 97.58%
+Epoch 40/50  train_cost: 0.0601  train_acc: 98.37%  val_loss: 0.0909  val_acc: 97.53%
+Epoch 41/50  train_cost: 0.0584  train_acc: 98.38%  val_loss: 0.0872  val_acc: 97.62%
+Epoch 42/50  train_cost: 0.0561  train_acc: 98.47%  val_loss: 0.0886  val_acc: 97.48%
+Epoch 43/50  train_cost: 0.0547  train_acc: 98.50%  val_loss: 0.0871  val_acc: 97.55%
+Epoch 44/50  train_cost: 0.0527  train_acc: 98.58%  val_loss: 0.0844  val_acc: 97.65%
+Epoch 45/50  train_cost: 0.0513  train_acc: 98.64%  val_loss: 0.0843  val_acc: 97.74%
+Epoch 46/50  train_cost: 0.0496  train_acc: 98.66%  val_loss: 0.0863  val_acc: 97.60%
+Epoch 47/50  train_cost: 0.0480  train_acc: 98.71%  val_loss: 0.0825  val_acc: 97.73%
+Epoch 48/50  train_cost: 0.0463  train_acc: 98.78%  val_loss: 0.0823  val_acc: 97.72%
+Epoch 49/50  train_cost: 0.0447  train_acc: 98.81%  val_loss: 0.0811  val_acc: 97.74%
+Epoch 50/50  train_cost: 0.0443  train_acc: 98.85%  val_loss: 0.0831  val_acc: 97.57%
+
+Training time: 42.67 s  Grind rate: 58584 smp/s
+Test accuracy:  97.62%  Test cost: 0.0799
+Inference time: 0.0698 s
+
+--- TILE=32  Threads=32 ---
+Train: 60000 images  Test: 10000 images
+Learning rate: 0.1000  Batch size: 500  Epochs: 50
+OpenMP threads: 32
+Epoch  1/50  train_cost: 1.6225  train_acc: 61.58%  val_loss: 0.6441  val_acc: 84.90%
+Epoch  2/50  train_cost: 0.5084  train_acc: 86.21%  val_loss: 0.3718  val_acc: 89.84%
+Epoch  3/50  train_cost: 0.3787  train_acc: 89.26%  val_loss: 0.3198  val_acc: 91.06%
+Epoch  4/50  train_cost: 0.3331  train_acc: 90.33%  val_loss: 0.2864  val_acc: 91.89%
+Epoch  5/50  train_cost: 0.3057  train_acc: 91.25%  val_loss: 0.2732  val_acc: 92.22%
+Epoch  6/50  train_cost: 0.2831  train_acc: 91.84%  val_loss: 0.2539  val_acc: 92.69%
+Epoch  7/50  train_cost: 0.2643  train_acc: 92.37%  val_loss: 0.2352  val_acc: 93.14%
+Epoch  8/50  train_cost: 0.2479  train_acc: 92.82%  val_loss: 0.2279  val_acc: 93.46%
+Epoch  9/50  train_cost: 0.2323  train_acc: 93.25%  val_loss: 0.2111  val_acc: 93.94%
+Epoch 10/50  train_cost: 0.2194  train_acc: 93.64%  val_loss: 0.2002  val_acc: 94.37%
+Epoch 11/50  train_cost: 0.2064  train_acc: 94.06%  val_loss: 0.1911  val_acc: 94.78%
+Epoch 12/50  train_cost: 0.1951  train_acc: 94.34%  val_loss: 0.1849  val_acc: 94.89%
+Epoch 13/50  train_cost: 0.1845  train_acc: 94.67%  val_loss: 0.1763  val_acc: 95.17%
+Epoch 14/50  train_cost: 0.1755  train_acc: 94.90%  val_loss: 0.1682  val_acc: 95.54%
+Epoch 15/50  train_cost: 0.1665  train_acc: 95.18%  val_loss: 0.1573  val_acc: 95.80%
+Epoch 16/50  train_cost: 0.1587  train_acc: 95.41%  val_loss: 0.1520  val_acc: 95.86%
+Epoch 17/50  train_cost: 0.1503  train_acc: 95.61%  val_loss: 0.1461  val_acc: 96.12%
+Epoch 18/50  train_cost: 0.1431  train_acc: 95.83%  val_loss: 0.1457  val_acc: 95.96%
+Epoch 19/50  train_cost: 0.1364  train_acc: 96.07%  val_loss: 0.1375  val_acc: 96.14%
+Epoch 20/50  train_cost: 0.1299  train_acc: 96.25%  val_loss: 0.1335  val_acc: 96.34%
+Epoch 21/50  train_cost: 0.1244  train_acc: 96.46%  val_loss: 0.1288  val_acc: 96.40%
+Epoch 22/50  train_cost: 0.1197  train_acc: 96.56%  val_loss: 0.1244  val_acc: 96.55%
+Epoch 23/50  train_cost: 0.1142  train_acc: 96.76%  val_loss: 0.1279  val_acc: 96.53%
+Epoch 24/50  train_cost: 0.1090  train_acc: 96.93%  val_loss: 0.1213  val_acc: 96.73%
+Epoch 25/50  train_cost: 0.1043  train_acc: 97.03%  val_loss: 0.1149  val_acc: 96.97%
+Epoch 26/50  train_cost: 0.0998  train_acc: 97.17%  val_loss: 0.1122  val_acc: 96.91%
+Epoch 27/50  train_cost: 0.0962  train_acc: 97.34%  val_loss: 0.1094  val_acc: 96.95%
+Epoch 28/50  train_cost: 0.0926  train_acc: 97.40%  val_loss: 0.1079  val_acc: 97.02%
+Epoch 29/50  train_cost: 0.0892  train_acc: 97.53%  val_loss: 0.1070  val_acc: 97.05%
+Epoch 30/50  train_cost: 0.0860  train_acc: 97.63%  val_loss: 0.1026  val_acc: 97.21%
+Epoch 31/50  train_cost: 0.0824  train_acc: 97.75%  val_loss: 0.1038  val_acc: 97.17%
+Epoch 32/50  train_cost: 0.0797  train_acc: 97.84%  val_loss: 0.0991  val_acc: 97.32%
+Epoch 33/50  train_cost: 0.0768  train_acc: 97.93%  val_loss: 0.1005  val_acc: 97.30%
+Epoch 34/50  train_cost: 0.0741  train_acc: 97.94%  val_loss: 0.0953  val_acc: 97.40%
+Epoch 35/50  train_cost: 0.0715  train_acc: 98.01%  val_loss: 0.0944  val_acc: 97.47%
+Epoch 36/50  train_cost: 0.0686  train_acc: 98.10%  val_loss: 0.0928  val_acc: 97.47%
+Epoch 37/50  train_cost: 0.0666  train_acc: 98.20%  val_loss: 0.0917  val_acc: 97.47%
+Epoch 38/50  train_cost: 0.0645  train_acc: 98.23%  val_loss: 0.0935  val_acc: 97.44%
+Epoch 39/50  train_cost: 0.0620  train_acc: 98.30%  val_loss: 0.0892  val_acc: 97.58%
+Epoch 40/50  train_cost: 0.0601  train_acc: 98.37%  val_loss: 0.0909  val_acc: 97.53%
+Epoch 41/50  train_cost: 0.0584  train_acc: 98.38%  val_loss: 0.0872  val_acc: 97.62%
+Epoch 42/50  train_cost: 0.0561  train_acc: 98.47%  val_loss: 0.0886  val_acc: 97.48%
+Epoch 43/50  train_cost: 0.0547  train_acc: 98.50%  val_loss: 0.0871  val_acc: 97.55%
+Epoch 44/50  train_cost: 0.0527  train_acc: 98.58%  val_loss: 0.0844  val_acc: 97.65%
+Epoch 45/50  train_cost: 0.0513  train_acc: 98.64%  val_loss: 0.0843  val_acc: 97.74%
+Epoch 46/50  train_cost: 0.0496  train_acc: 98.66%  val_loss: 0.0863  val_acc: 97.60%
+Epoch 47/50  train_cost: 0.0480  train_acc: 98.71%  val_loss: 0.0825  val_acc: 97.73%
+Epoch 48/50  train_cost: 0.0463  train_acc: 98.78%  val_loss: 0.0823  val_acc: 97.72%
+Epoch 49/50  train_cost: 0.0447  train_acc: 98.81%  val_loss: 0.0811  val_acc: 97.74%
+Epoch 50/50  train_cost: 0.0443  train_acc: 98.85%  val_loss: 0.0831  val_acc: 97.57%
+
+Training time: 39.53 s  Grind rate: 63244 smp/s
+Test accuracy:  97.62%  Test cost: 0.0799
+Inference time: 0.0576 s
+
+=== CPU BLAS (OpenBLAS) ===
+
+--- BLAS  Threads=16 ---
+Train: 60000 images  Test: 10000 images
+Learning rate: 0.1000  Batch size: 500  Epochs: 50
+OpenMP threads: 16
+Epoch  1/50  train_cost: 1.6225  train_acc: 61.58%  val_loss: 0.6441  val_acc: 84.90%
+Epoch  2/50  train_cost: 0.5084  train_acc: 86.21%  val_loss: 0.3718  val_acc: 89.84%
+Epoch  3/50  train_cost: 0.3787  train_acc: 89.26%  val_loss: 0.3198  val_acc: 91.06%
+Epoch  4/50  train_cost: 0.3331  train_acc: 90.33%  val_loss: 0.2864  val_acc: 91.88%
+Epoch  5/50  train_cost: 0.3057  train_acc: 91.25%  val_loss: 0.2732  val_acc: 92.23%
+Epoch  6/50  train_cost: 0.2831  train_acc: 91.84%  val_loss: 0.2539  val_acc: 92.70%
+Epoch  7/50  train_cost: 0.2643  train_acc: 92.37%  val_loss: 0.2351  val_acc: 93.14%
+Epoch  8/50  train_cost: 0.2479  train_acc: 92.82%  val_loss: 0.2279  val_acc: 93.48%
+Epoch  9/50  train_cost: 0.2323  train_acc: 93.25%  val_loss: 0.2111  val_acc: 93.94%
+Epoch 10/50  train_cost: 0.2194  train_acc: 93.64%  val_loss: 0.2002  val_acc: 94.37%
+Epoch 11/50  train_cost: 0.2064  train_acc: 94.05%  val_loss: 0.1911  val_acc: 94.78%
+Epoch 12/50  train_cost: 0.1951  train_acc: 94.34%  val_loss: 0.1849  val_acc: 94.89%
+Epoch 13/50  train_cost: 0.1845  train_acc: 94.66%  val_loss: 0.1762  val_acc: 95.17%
+Epoch 14/50  train_cost: 0.1755  train_acc: 94.90%  val_loss: 0.1682  val_acc: 95.54%
+Epoch 15/50  train_cost: 0.1665  train_acc: 95.17%  val_loss: 0.1573  val_acc: 95.77%
+Epoch 16/50  train_cost: 0.1586  train_acc: 95.41%  val_loss: 0.1520  val_acc: 95.86%
+Epoch 17/50  train_cost: 0.1503  train_acc: 95.62%  val_loss: 0.1461  val_acc: 96.11%
+Epoch 18/50  train_cost: 0.1431  train_acc: 95.82%  val_loss: 0.1456  val_acc: 95.98%
+Epoch 19/50  train_cost: 0.1364  train_acc: 96.07%  val_loss: 0.1375  val_acc: 96.15%
+Epoch 20/50  train_cost: 0.1299  train_acc: 96.26%  val_loss: 0.1334  val_acc: 96.34%
+Epoch 21/50  train_cost: 0.1244  train_acc: 96.46%  val_loss: 0.1288  val_acc: 96.40%
+Epoch 22/50  train_cost: 0.1197  train_acc: 96.55%  val_loss: 0.1244  val_acc: 96.56%
+Epoch 23/50  train_cost: 0.1142  train_acc: 96.76%  val_loss: 0.1280  val_acc: 96.52%
+Epoch 24/50  train_cost: 0.1090  train_acc: 96.94%  val_loss: 0.1213  val_acc: 96.71%
+Epoch 25/50  train_cost: 0.1043  train_acc: 97.04%  val_loss: 0.1149  val_acc: 96.97%
+Epoch 26/50  train_cost: 0.0998  train_acc: 97.18%  val_loss: 0.1121  val_acc: 96.90%
+Epoch 27/50  train_cost: 0.0962  train_acc: 97.34%  val_loss: 0.1094  val_acc: 96.95%
+Epoch 28/50  train_cost: 0.0926  train_acc: 97.40%  val_loss: 0.1079  val_acc: 97.01%
+Epoch 29/50  train_cost: 0.0892  train_acc: 97.55%  val_loss: 0.1070  val_acc: 97.04%
+Epoch 30/50  train_cost: 0.0860  train_acc: 97.63%  val_loss: 0.1026  val_acc: 97.21%
+Epoch 31/50  train_cost: 0.0824  train_acc: 97.74%  val_loss: 0.1038  val_acc: 97.16%
+Epoch 32/50  train_cost: 0.0797  train_acc: 97.83%  val_loss: 0.0991  val_acc: 97.32%
+Epoch 33/50  train_cost: 0.0768  train_acc: 97.93%  val_loss: 0.1006  val_acc: 97.30%
+Epoch 34/50  train_cost: 0.0741  train_acc: 97.94%  val_loss: 0.0954  val_acc: 97.41%
+Epoch 35/50  train_cost: 0.0716  train_acc: 98.02%  val_loss: 0.0944  val_acc: 97.49%
+Epoch 36/50  train_cost: 0.0686  train_acc: 98.10%  val_loss: 0.0928  val_acc: 97.49%
+Epoch 37/50  train_cost: 0.0666  train_acc: 98.21%  val_loss: 0.0917  val_acc: 97.49%
+Epoch 38/50  train_cost: 0.0646  train_acc: 98.24%  val_loss: 0.0936  val_acc: 97.42%
+Epoch 39/50  train_cost: 0.0620  train_acc: 98.30%  val_loss: 0.0892  val_acc: 97.57%
+Epoch 40/50  train_cost: 0.0601  train_acc: 98.37%  val_loss: 0.0912  val_acc: 97.51%
+Epoch 41/50  train_cost: 0.0584  train_acc: 98.39%  val_loss: 0.0873  val_acc: 97.59%
+Epoch 42/50  train_cost: 0.0561  train_acc: 98.47%  val_loss: 0.0887  val_acc: 97.46%
+Epoch 43/50  train_cost: 0.0546  train_acc: 98.50%  val_loss: 0.0872  val_acc: 97.54%
+Epoch 44/50  train_cost: 0.0527  train_acc: 98.57%  val_loss: 0.0846  val_acc: 97.64%
+Epoch 45/50  train_cost: 0.0514  train_acc: 98.63%  val_loss: 0.0845  val_acc: 97.72%
+Epoch 46/50  train_cost: 0.0496  train_acc: 98.66%  val_loss: 0.0864  val_acc: 97.60%
+Epoch 47/50  train_cost: 0.0480  train_acc: 98.70%  val_loss: 0.0826  val_acc: 97.70%
+Epoch 48/50  train_cost: 0.0463  train_acc: 98.77%  val_loss: 0.0823  val_acc: 97.72%
+Epoch 49/50  train_cost: 0.0448  train_acc: 98.80%  val_loss: 0.0811  val_acc: 97.73%
+Epoch 50/50  train_cost: 0.0443  train_acc: 98.85%  val_loss: 0.0831  val_acc: 97.57%
+
+Training time: 24.31 s  Grind rate: 102857 smp/s
+Test accuracy:  97.62%  Test cost: 0.0798
+Inference time: 0.0628 s
+
+--- BLAS  Threads=32 ---
+Train: 60000 images  Test: 10000 images
+Learning rate: 0.1000  Batch size: 500  Epochs: 50
+OpenMP threads: 32
+Epoch  1/50  train_cost: 1.6225  train_acc: 61.58%  val_loss: 0.6441  val_acc: 84.90%
+Epoch  2/50  train_cost: 0.5084  train_acc: 86.21%  val_loss: 0.3718  val_acc: 89.84%
+Epoch  3/50  train_cost: 0.3787  train_acc: 89.26%  val_loss: 0.3198  val_acc: 91.06%
+Epoch  4/50  train_cost: 0.3331  train_acc: 90.33%  val_loss: 0.2864  val_acc: 91.88%
+Epoch  5/50  train_cost: 0.3057  train_acc: 91.25%  val_loss: 0.2732  val_acc: 92.23%
+Epoch  6/50  train_cost: 0.2831  train_acc: 91.84%  val_loss: 0.2539  val_acc: 92.70%
+Epoch  7/50  train_cost: 0.2643  train_acc: 92.37%  val_loss: 0.2351  val_acc: 93.14%
+Epoch  8/50  train_cost: 0.2479  train_acc: 92.82%  val_loss: 0.2279  val_acc: 93.48%
+Epoch  9/50  train_cost: 0.2323  train_acc: 93.25%  val_loss: 0.2111  val_acc: 93.94%
+Epoch 10/50  train_cost: 0.2194  train_acc: 93.64%  val_loss: 0.2002  val_acc: 94.37%
+Epoch 11/50  train_cost: 0.2064  train_acc: 94.05%  val_loss: 0.1911  val_acc: 94.78%
+Epoch 12/50  train_cost: 0.1951  train_acc: 94.34%  val_loss: 0.1849  val_acc: 94.89%
+Epoch 13/50  train_cost: 0.1845  train_acc: 94.66%  val_loss: 0.1762  val_acc: 95.17%
+Epoch 14/50  train_cost: 0.1755  train_acc: 94.90%  val_loss: 0.1682  val_acc: 95.54%
+Epoch 15/50  train_cost: 0.1665  train_acc: 95.17%  val_loss: 0.1573  val_acc: 95.77%
+Epoch 16/50  train_cost: 0.1586  train_acc: 95.41%  val_loss: 0.1520  val_acc: 95.86%
+Epoch 17/50  train_cost: 0.1503  train_acc: 95.62%  val_loss: 0.1461  val_acc: 96.11%
+Epoch 18/50  train_cost: 0.1431  train_acc: 95.82%  val_loss: 0.1456  val_acc: 95.98%
+Epoch 19/50  train_cost: 0.1364  train_acc: 96.07%  val_loss: 0.1375  val_acc: 96.15%
+Epoch 20/50  train_cost: 0.1299  train_acc: 96.26%  val_loss: 0.1334  val_acc: 96.34%
+Epoch 21/50  train_cost: 0.1244  train_acc: 96.46%  val_loss: 0.1288  val_acc: 96.40%
+Epoch 22/50  train_cost: 0.1197  train_acc: 96.55%  val_loss: 0.1244  val_acc: 96.56%
+Epoch 23/50  train_cost: 0.1142  train_acc: 96.76%  val_loss: 0.1280  val_acc: 96.52%
+Epoch 24/50  train_cost: 0.1090  train_acc: 96.94%  val_loss: 0.1213  val_acc: 96.71%
+Epoch 25/50  train_cost: 0.1043  train_acc: 97.04%  val_loss: 0.1149  val_acc: 96.97%
+Epoch 26/50  train_cost: 0.0998  train_acc: 97.18%  val_loss: 0.1121  val_acc: 96.90%
+Epoch 27/50  train_cost: 0.0962  train_acc: 97.34%  val_loss: 0.1094  val_acc: 96.95%
+Epoch 28/50  train_cost: 0.0926  train_acc: 97.40%  val_loss: 0.1079  val_acc: 97.01%
+Epoch 29/50  train_cost: 0.0892  train_acc: 97.55%  val_loss: 0.1070  val_acc: 97.04%
+Epoch 30/50  train_cost: 0.0860  train_acc: 97.63%  val_loss: 0.1026  val_acc: 97.21%
+Epoch 31/50  train_cost: 0.0824  train_acc: 97.74%  val_loss: 0.1038  val_acc: 97.16%
+Epoch 32/50  train_cost: 0.0797  train_acc: 97.83%  val_loss: 0.0991  val_acc: 97.32%
+Epoch 33/50  train_cost: 0.0768  train_acc: 97.93%  val_loss: 0.1006  val_acc: 97.30%
+Epoch 34/50  train_cost: 0.0741  train_acc: 97.94%  val_loss: 0.0954  val_acc: 97.41%
+Epoch 35/50  train_cost: 0.0716  train_acc: 98.02%  val_loss: 0.0944  val_acc: 97.49%
+Epoch 36/50  train_cost: 0.0686  train_acc: 98.10%  val_loss: 0.0928  val_acc: 97.49%
+Epoch 37/50  train_cost: 0.0666  train_acc: 98.21%  val_loss: 0.0917  val_acc: 97.49%
+Epoch 38/50  train_cost: 0.0646  train_acc: 98.24%  val_loss: 0.0936  val_acc: 97.42%
+Epoch 39/50  train_cost: 0.0620  train_acc: 98.30%  val_loss: 0.0892  val_acc: 97.57%
+Epoch 40/50  train_cost: 0.0601  train_acc: 98.37%  val_loss: 0.0912  val_acc: 97.51%
+Epoch 41/50  train_cost: 0.0584  train_acc: 98.39%  val_loss: 0.0873  val_acc: 97.59%
+Epoch 42/50  train_cost: 0.0561  train_acc: 98.47%  val_loss: 0.0887  val_acc: 97.46%
+Epoch 43/50  train_cost: 0.0546  train_acc: 98.50%  val_loss: 0.0872  val_acc: 97.54%
+Epoch 44/50  train_cost: 0.0527  train_acc: 98.57%  val_loss: 0.0846  val_acc: 97.64%
+Epoch 45/50  train_cost: 0.0514  train_acc: 98.63%  val_loss: 0.0845  val_acc: 97.72%
+Epoch 46/50  train_cost: 0.0496  train_acc: 98.66%  val_loss: 0.0864  val_acc: 97.60%
+Epoch 47/50  train_cost: 0.0480  train_acc: 98.70%  val_loss: 0.0826  val_acc: 97.70%
+Epoch 48/50  train_cost: 0.0463  train_acc: 98.77%  val_loss: 0.0823  val_acc: 97.72%
+Epoch 49/50  train_cost: 0.0448  train_acc: 98.80%  val_loss: 0.0811  val_acc: 97.73%
+Epoch 50/50  train_cost: 0.0443  train_acc: 98.85%  val_loss: 0.0831  val_acc: 97.57%
+
+Training time: 24.81 s  Grind rate: 100748 smp/s
+Test accuracy:  97.62%  Test cost: 0.0798
+Inference time: 0.0492 s
+
+Done.
