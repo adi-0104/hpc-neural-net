@@ -1,7 +1,7 @@
 #pragma once
 
 #ifndef TILE
-#define TILE 64
+#define TILE 32
 #endif
 
 // tiling without cblas
